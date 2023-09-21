@@ -7,10 +7,7 @@
 
   $: monsterId = $page.url.searchParams.get("monsterId");
   $: monster = data.monsters.find((m) => m.id === monsterId);
-  $: monsterId2 = $page.url.searchParams.get("monsterId2");
-  $: monster2 = data.monsters.find((m) => m.id === monsterId2);
-  $: monsterId3 = $page.url.searchParams.get("monsterId3");
-  $: monster3 = data.monsters.find((m) => m.id === monsterId3);
+
   const monsterClick = (monster) => {
     monsterId = monster.id;
 
