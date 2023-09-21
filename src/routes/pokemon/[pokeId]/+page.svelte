@@ -14,31 +14,28 @@
     <div class="img-container">
       <img style="margin: 20px;" src={pokemon.image} alt={pokemon.name} />
     </div>
-    <div
-      style="display: flex; flex-direction: column; justify-content: space-between; padding: 10px; width: 50%;height: 100%;"
-    >
-      <div class="poke-info">
-        <div style="display: flex;  justify-content: space-between;">
-          <div style="display: flex;">
-            <p>Types : &nbsp</p>
-            <p>{pokemon.types}</p>
-          </div>
+
+    <div class="poke-info">
+      <div style="display: flex;  justify-content: space-between;">
+        <div style="display: flex;">
+          <p>Types : &nbsp</p>
+          <p>{pokemon.types}</p>
         </div>
-        <div style="display: flex;  justify-content: space-between;">
-          <div style="display: flex;">
-            <p>Abilities :&nbsp</p>
-            <p>{pokemon.abilities}</p>
-          </div>
+      </div>
+      <div style="display: flex;  justify-content: space-between;">
+        <div style="display: flex;">
+          <p>Abilities :&nbsp</p>
+          <p>{pokemon.abilities}</p>
         </div>
-        <div style="display: flex; justify-content: space-between;">
-          <div style="display: flex">
-            <p>Height :&nbsp</p>
-            <p>{pokemon.height}</p>
-          </div>
-          <div style="display: flex;">
-            <p>Weight :&nbsp</p>
-            <p>{pokemon.weight}</p>
-          </div>
+      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex">
+          <p>Height :&nbsp</p>
+          <p>{pokemon.height}</p>
+        </div>
+        <div style="display: flex;">
+          <p>Weight :&nbsp</p>
+          <p>{pokemon.weight}</p>
         </div>
       </div>
     </div>
@@ -92,6 +89,12 @@
     padding: 10px;
     border-radius: 5px;
     background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    width: 50%;
+    height: 100%;
   }
   .poke-stats {
     max-width: 50%;
@@ -121,5 +124,18 @@
     height: 100%;
     border-radius: 5px;
     background-color: #007bff; /* Change the bar color here */
+  }
+
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    .pokemon-detail {
+      flex-direction: column;
+    }
+
+    .poke-info {
+      /* padding: 10px;*/
+      width: 100%;
+      margin-top: 20px;
+    }
   }
 </style>
