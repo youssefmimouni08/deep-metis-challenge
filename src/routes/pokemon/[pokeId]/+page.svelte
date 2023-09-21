@@ -12,13 +12,35 @@
 
   <div class="pokemon-detail">
     <div class="img-container">
-      <img class="monster-image" src={pokemon.image} alt={pokemon.name} />
+      <img style="margin: 20px;" src={pokemon.image} alt={pokemon.name} />
     </div>
-    <div class="poke-info">
-      <p>Types : {pokemon.types}</p>
-      <p>Abilities : {pokemon.abilities}</p>
-      <p>Height: {pokemon.height}</p>
-      <p>Weight : {pokemon.weight}</p>
+    <div
+      style="display: flex; flex-direction: column; justify-content: space-between; padding: 10px; width: 50%;height: 100%;"
+    >
+      <div class="poke-info">
+        <div style="display: flex;  justify-content: space-between;">
+          <div style="display: flex;">
+            <p>Types : &nbsp</p>
+            <p>{pokemon.types}</p>
+          </div>
+        </div>
+        <div style="display: flex;  justify-content: space-between;">
+          <div style="display: flex;">
+            <p>Abilities :&nbsp</p>
+            <p>{pokemon.abilities}</p>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <div style="display: flex">
+            <p>Height :&nbsp</p>
+            <p>{pokemon.height}</p>
+          </div>
+          <div style="display: flex;">
+            <p>Weight :&nbsp</p>
+            <p>{pokemon.weight}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -48,6 +70,9 @@
     margin: 20px;
   }
   .img-container {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
     display: block;
     width: 300px;
     display: flex;
@@ -58,7 +83,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 50%;
+    max-width: 60%;
     margin: 0 auto;
     width: 1200px;
   }
