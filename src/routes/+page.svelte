@@ -2,17 +2,10 @@
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import Monster from "./Monster.svelte";
+  import { caughtMonsters } from "$lib/stores.js";
+
   import { generations } from "./generations.js";
   export let data;
-
-  $: monsterId = $page.url.searchParams.get("monsterId");
-  $: monster = data.monsters.find((m) => m.id === monsterId);
-
-  const monsterClick = (monster) => {
-    monsterId = monster.id;
-
-    goto(`?monsterId=${monsterId}`);
-  };
 
   const updateSearchParams = (key, value) => {
     const searchParams = new URLSearchParams($page.url.search);
@@ -67,7 +60,12 @@
 <div class="monsters">
   {#each selectedMonsters as monster (monster.id)}
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <Monster {monster} isCatachable="true" />
+    <!-- add code that verifies if this monster exist in caught monsters array with filter by name-->
+    {#if $caughtMonsters.filter((caughtMonster) => caughtMonster.name === monster.name).length > 0}
+      <Monster {monster} isCatachable={false} />
+    {:else}
+      <Monster {monster} isCatachable={true} />
+    {/if}
   {/each}
 </div>
 
