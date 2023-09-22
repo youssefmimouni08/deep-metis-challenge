@@ -60,7 +60,7 @@
 <div class="monsters">
   {#each selectedMonsters as monster (monster.id)}
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <!-- add code that verifies if this monster exist in caught monsters array with filter by name-->
+    <!-- verify if this monster exist in caught monsters array with filter by name-->
     {#if $caughtMonsters.filter((caughtMonster) => caughtMonster.name === monster.name).length > 0}
       <Monster {monster} isCatachable={false} />
     {:else}
